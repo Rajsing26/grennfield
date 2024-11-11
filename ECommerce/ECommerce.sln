@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializationTestApp", "SerializationTestApp\SerializationTestApp.csproj", "{A3476E9B-9891-43B1-AF35-318250C76625}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionDemoApp", "CollectionDemoApp\CollectionDemoApp.csproj", "{5C2EFB36-AD01-4BB3-88F6-95C34B3BA847}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDesignPatternApp", "TestDesignPatternApp\TestDesignPatternApp.csproj", "{3B0D512F-1C0F-4F62-A59D-EBDAF75CF7E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{A3476E9B-9891-43B1-AF35-318250C76625}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3476E9B-9891-43B1-AF35-318250C76625}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3476E9B-9891-43B1-AF35-318250C76625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C2EFB36-AD01-4BB3-88F6-95C34B3BA847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C2EFB36-AD01-4BB3-88F6-95C34B3BA847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C2EFB36-AD01-4BB3-88F6-95C34B3BA847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C2EFB36-AD01-4BB3-88F6-95C34B3BA847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B0D512F-1C0F-4F62-A59D-EBDAF75CF7E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B0D512F-1C0F-4F62-A59D-EBDAF75CF7E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B0D512F-1C0F-4F62-A59D-EBDAF75CF7E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B0D512F-1C0F-4F62-A59D-EBDAF75CF7E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
