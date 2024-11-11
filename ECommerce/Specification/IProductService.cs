@@ -7,7 +7,7 @@ using POCO;
 namespace Specification
 {
     //interfaces are used to define contract
-   public interface IProductService
+    public interface IProductService
     {
 
         //all methods in interface are abstract

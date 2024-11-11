@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using POCO;
@@ -8,6 +6,7 @@ using Specification;
 using BinaryDataRepositoryLIb;
 using System.Security;
 using System.Net.Http;
+using System.Collections.Generic;
 namespace Services
 {
 
@@ -28,8 +27,8 @@ namespace Services
             products.Add(new Product { Id = 3, Name = "lily", Description = "Delicate Flower", UnitPrice = 2, Quantity = 7000, Image = "/images/lily.jpg" });
             products.Add(new Product { Id = 4, Name = "jasmine", Description = "Fregrance Flower", UnitPrice = 12, Quantity = 55000, Image = "/images/jasmines.jpg" });
             products.Add(new Product { Id = 5, Name = "lotus", Description = "Worship Flower", UnitPrice = 45, Quantity = 15000, Image = "/images/lotus.jpg" });
-            IDataRepository repo = new BinaryRepository();
-            status= repo.Serialize("products.dat", products);
+            IDataRepository<Product> repo = new BinaryRepository<Product>();
+            status = repo.Serialize("products.dat", products);
             return status;
         }
         public bool Delete(int id)
@@ -39,8 +38,8 @@ namespace Services
             {
                 List<Product> allProducts = GetAll();
                 allProducts.Remove(theProduct);
-                IDataRepository repo = new BinaryRepository();
-                repo.Serialize("products.dat",allProducts);
+                IDataRepository<Product> repo = new BinaryRepository<Product>();
+                repo.Serialize("products.dat", allProducts);
             }
             return false;
         }
@@ -49,21 +48,21 @@ namespace Services
         {
             Product foundProduct = null;
             List<Product> products = GetAll();
-            foreach(Product p in products)
+            foreach (Product p in products)
             {
-                if(p.Id == id)
+                if (p.Id == id)
                 {
                     foundProduct = p;
 
                 }
             }
             return foundProduct;
-                }
+        }
 
         public List<Product> GetAll()
         {
             List<Product> products = new List<Product>();
-            IDataRepository repository = new BinaryRepository();
+            IDataRepository<Product> repository = new BinaryRepository<Product>();
             products = repository.Deserialize("products.dat");
             return products;
         }
@@ -72,10 +71,10 @@ namespace Services
         {
             List<Product> allProducts = GetAll();
             allProducts.Add(product);
-            IDataRepository repo = new BinaryRepository();
+            IDataRepository<Product> repo = new BinaryRepository<Product>();
             repo.Serialize("products.dat", allProducts);
 
-            return false;    
+            return false;
         }
 
         public bool Update(Product productTobeUpdated)
@@ -86,7 +85,7 @@ namespace Services
                 List<Product> allProducts = GetAll();
                 allProducts.Remove(theProduct);
                 allProducts.Add(productTobeUpdated);
-                IDataRepository repo = new BinaryRepository();
+                IDataRepository<Product> repo = new BinaryRepository<Product>();
                 repo.Serialize("products.dat", allProducts);
             }
             return false;

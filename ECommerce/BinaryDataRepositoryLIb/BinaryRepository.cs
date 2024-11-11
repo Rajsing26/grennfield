@@ -9,31 +9,31 @@ using POCO;
 using Specification;
 namespace BinaryDataRepositoryLIb
 {
-    public class BinaryRepository:IDataRepository
+    public class BinaryRepository<T> : IDataRepository<T>
     {
-        public bool Serialize(string filename, List<Product> products)
+        public bool Serialize(string filename, List<T> items)
         {
             bool status = false;
             // Code for saving
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(filename, FileMode.OpenOrCreate);
-            formatter.Serialize(stream, products);
+            formatter.Serialize(stream, items);
             stream.Close();
 
             return status;
         }
-        public List<Product> Deserialize(string filename)
+        public List<T> Deserialize(string filename)
         {
-            List<Product> products =new List<Product> ();
+            List<T> items =new List<T> ();
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(filename, FileMode.Open);
             if (stream != null) {
 
-                products =(List<Product>) formatter.Deserialize(stream);
+                items = (List<T>) formatter.Deserialize(stream);
             }
             stream.Close();
             // retrive all products from file
-            return products;
+            return items;
 
         }
     }
