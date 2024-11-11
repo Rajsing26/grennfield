@@ -234,10 +234,6 @@
     <Content Include="Scripts\jquery-3.7.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BinaryDataRepositoryLIb\BinaryDataRepositoryLIb.csproj">
-      <Project>{89982411-9260-42fa-9789-aa772a33b3eb}</Project>
-      <Name>BinaryDataRepositoryLIb</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Catalog\Catalog.csproj">
       <Project>{0a36cf2d-e6cb-4d7a-91b3-314e6a3a21f7}</Project>
       <Name>Catalog</Name>

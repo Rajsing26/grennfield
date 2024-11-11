@@ -8,7 +8,6 @@ using Specification;
 using BinaryDataRepositoryLIb;
 using System.Security;
 using System.Net.Http;
-using System.Net.NetworkInformation;
 namespace Services
 {
 
@@ -30,8 +29,7 @@ namespace Services
             products.Add(new Product { Id = 4, Name = "jasmine", Description = "Fregrance Flower", UnitPrice = 12, Quantity = 55000, Image = "/images/jasmines.jpg" });
             products.Add(new Product { Id = 5, Name = "lotus", Description = "Worship Flower", UnitPrice = 45, Quantity = 15000, Image = "/images/lotus.jpg" });
             IDataRepository repo = new BinaryRepository();
-            //status= repo.Serialize("products.dat", products);
-            status = repo.Serialize("D:/mywork/grennfield/ECommerce/SerializationTestApp/bin/Debug/products.dat", products);
+            status= repo.Serialize("products.dat", products);
             return status;
         }
         public bool Delete(int id)
@@ -42,9 +40,7 @@ namespace Services
                 List<Product> allProducts = GetAll();
                 allProducts.Remove(theProduct);
                 IDataRepository repo = new BinaryRepository();
-                //repo.Serialize("products.dat",allProducts);
-                repo.Serialize("D:/mywork/grennfield/ECommerce/SerializationTestApp/bin/Debug/products.dat", allProducts);
-
+                repo.Serialize("products.dat",allProducts);
             }
             return false;
         }
@@ -68,7 +64,7 @@ namespace Services
         {
             List<Product> products = new List<Product>();
             IDataRepository repository = new BinaryRepository();
-            products = repository.Deserialize("D:/mywork/grennfield/ECommerce/SerializationTestApp/bin/Debug/products.dat");
+            products = repository.Deserialize("products.dat");
             return products;
         }
 
@@ -77,7 +73,7 @@ namespace Services
             List<Product> allProducts = GetAll();
             allProducts.Add(product);
             IDataRepository repo = new BinaryRepository();
-            repo.Serialize("D:/mywork/grennfield/ECommerce/SerializationTestApp/bin/Debug/products.dat", allProducts);
+            repo.Serialize("products.dat", allProducts);
 
             return false;    
         }
@@ -91,7 +87,7 @@ namespace Services
                 allProducts.Remove(theProduct);
                 allProducts.Add(productTobeUpdated);
                 IDataRepository repo = new BinaryRepository();
-                repo.Serialize("D:/mywork/grennfield/ECommerce/SerializationTestApp/bin/Debug/products.dat", allProducts);
+                repo.Serialize("products.dat", allProducts);
             }
             return false;
         }
