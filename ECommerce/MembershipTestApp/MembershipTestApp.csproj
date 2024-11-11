@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BinaryDataRepositoryLIb\BinaryDataRepositoryLIb.csproj">
+      <Project>{89982411-9260-42fa-9789-aa772a33b3eb}</Project>
+      <Name>BinaryDataRepositoryLIb</Name>
+    </ProjectReference>
     <ProjectReference Include="..\POCOLib\POCOLib.csproj">
       <Project>{6f7e85f3-fd2c-444e-9bf0-8e40e34ed7c6}</Project>
       <Name>POCOLib</Name>
