@@ -27,8 +27,9 @@ namespace Services
             products.Add(new Product { Id = 3, Name = "lily", Description = "Delicate Flower", UnitPrice = 2, Quantity = 7000, Image = "/images/lily.jpg" });
             products.Add(new Product { Id = 4, Name = "jasmine", Description = "Fregrance Flower", UnitPrice = 12, Quantity = 55000, Image = "/images/jasmines.jpg" });
             products.Add(new Product { Id = 5, Name = "lotus", Description = "Worship Flower", UnitPrice = 45, Quantity = 15000, Image = "/images/lotus.jpg" });
-            IDataRepository<Product> repo = new BinaryRepository<Product>();
-            status = repo.Serialize("products.dat", products);
+            /* IDataRepository<Product> repo = new BinaryRepository<Product>();
+             status = repo.Serialize(@"E:/products.dat", products);*/
+            IDataRepository<Product> repo;
             return status;
         }
         public bool Delete(int id)
@@ -39,7 +40,7 @@ namespace Services
                 List<Product> allProducts = GetAll();
                 allProducts.Remove(theProduct);
                 IDataRepository<Product> repo = new BinaryRepository<Product>();
-                repo.Serialize("products.dat", allProducts);
+                repo.Serialize(@"E:/products.dat", allProducts);
             }
             return false;
         }
@@ -63,7 +64,7 @@ namespace Services
         {
             List<Product> products = new List<Product>();
             IDataRepository<Product> repository = new BinaryRepository<Product>();
-            products = repository.Deserialize("products.dat");
+            products = repository.Deserialize(@"E:/products.dat");
             return products;
         }
 
@@ -72,7 +73,7 @@ namespace Services
             List<Product> allProducts = GetAll();
             allProducts.Add(product);
             IDataRepository<Product> repo = new BinaryRepository<Product>();
-            repo.Serialize("products.dat", allProducts);
+            repo.Serialize(@"E:/products.dat", allProducts);
 
             return false;
         }
@@ -86,7 +87,7 @@ namespace Services
                 allProducts.Remove(theProduct);
                 allProducts.Add(productTobeUpdated);
                 IDataRepository<Product> repo = new BinaryRepository<Product>();
-                repo.Serialize("products.dat", allProducts);
+                repo.Serialize(@"E:/products.dat", allProducts);
             }
             return false;
         }

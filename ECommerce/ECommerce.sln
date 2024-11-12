@@ -43,6 +43,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDesignPatternApp", "Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MembershipTestApp", "MembershipTestApp\MembershipTestApp.csproj", "{BA50875B-F802-403B-851B-2A7564F99A9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthWebAPI", "AuthWebAPI\AuthWebAPI.csproj", "{06B8935F-CFA1-4774-84AA-2C45697DD472}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonDataRepositoryLib", "JsonDataRepositoryLib\JsonDataRepositoryLib.csproj", "{993FC9D4-404C-4AE2-B4C7-E9069067429D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +133,14 @@ Global
 		{BA50875B-F802-403B-851B-2A7564F99A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA50875B-F802-403B-851B-2A7564F99A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA50875B-F802-403B-851B-2A7564F99A9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06B8935F-CFA1-4774-84AA-2C45697DD472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B8935F-CFA1-4774-84AA-2C45697DD472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06B8935F-CFA1-4774-84AA-2C45697DD472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06B8935F-CFA1-4774-84AA-2C45697DD472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{993FC9D4-404C-4AE2-B4C7-E9069067429D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993FC9D4-404C-4AE2-B4C7-E9069067429D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993FC9D4-404C-4AE2-B4C7-E9069067429D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993FC9D4-404C-4AE2-B4C7-E9069067429D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
