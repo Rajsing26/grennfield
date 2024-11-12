@@ -77,10 +77,6 @@
       <Project>{89982411-9260-42fa-9789-aa772a33b3eb}</Project>
       <Name>BinaryDataRepositoryLIb</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Services\Services.csproj">
-      <Project>{deccf391-8cd8-4c6f-bf07-a8fa1e49a94d}</Project>
-      <Name>Services</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Specification\Specification.csproj">
       <Project>{c4b3f2b3-a6dd-4764-8a11-10f407eb2611}</Project>
       <Name>Specification</Name>
