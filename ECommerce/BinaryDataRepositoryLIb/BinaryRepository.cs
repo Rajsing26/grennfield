@@ -19,6 +19,8 @@ namespace BinaryDataRepositoryLIb
             FileStream stream = new FileStream(filename, FileMode.OpenOrCreate);
             formatter.Serialize(stream, items);
             stream.Close();
+            status = true;
+
 
             return status;
         }

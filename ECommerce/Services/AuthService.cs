@@ -44,14 +44,17 @@ namespace Services
             List<User> users = new List<User>();
             users = GetAllUser();
             users.Add(u);
+
             List<Credenail> credentials = new List<Credenail>();
             credentials = GetAllCredentials();
             Credenail credential = new Credenail { Email = u.Email, Password = pass };
-
             credentials.Add(credential);
+
             IDataRepository<User> repository = new BinaryRepository<User>();
             status = repository.Serialize(logfile, users);
+
             status = false;
+
             IDataRepository<Credenail> dataRepository = new BinaryRepository<Credenail>();
             status = dataRepository.Serialize(credfile, credentials);
             return status;
