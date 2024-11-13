@@ -1,5 +1,7 @@
-﻿using System;
+﻿using BankingPortal.Models;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,32 +11,38 @@ namespace BankingPortal.Controllers
     public class AuthController : Controller
     {
         // GET: Auth
-        public ActionResult Index()
+        public ActionResult Login()
         {
             return View();
         }
 
         // POST
         [HttpPost]
-        public ActionResult Index(string email,string password)
+        public ActionResult Login(string email,string password)
         {
-            if(email == "Rajisng@gmail.com" && password == "1234") 
+            IAuthService svc = new AuthService();
+            if (svc.Login(email, password))
             {
                 return RedirectToAction("Welcome");   
             }
             else
             {
+
                 return View();
             }
+           
+        }
+
+        public ActionResult Register()
+        {
             return View();
         }
 
-        public ActionResult Login()
+        [HttpPost]
+        public ActionResult Register(string username, string oldpassword, string newpassword)
         {
-            return View();
-        }
-        public ActionResult Register()
-        {
+            IAuthService svc = new AuthService();   
+
             return View();
         }
 
