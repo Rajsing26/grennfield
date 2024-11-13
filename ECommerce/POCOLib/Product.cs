@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace POCO { 
+namespace EcommerceEntities
+{ 
     //Business entity class which contains only data
     //are called POCO classes in .net 
     //POCO: Plain Old CLR Objects

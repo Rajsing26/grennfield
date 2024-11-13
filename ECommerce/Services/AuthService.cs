@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 //using BinaryDataRepositoryLib;
 using BinaryDataRepositoryLIb;
 using JsonDataRepositoryLib;
-using POCO;
+using EcommerceEntities;
 using Specification;
 
-namespace Services
+namespace EcommerceServices
 {
 
     public class AuthService : IAuthService

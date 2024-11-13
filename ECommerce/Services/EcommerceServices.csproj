@@ -55,9 +55,9 @@
       <Project>{993fc9d4-404c-4ae2-b4c7-e9069067429d}</Project>
       <Name>JsonDataRepositoryLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\POCOLib\POCOLib.csproj">
+    <ProjectReference Include="..\POCOLib\EcommerceEntities.csproj">
       <Project>{6f7e85f3-fd2c-444e-9bf0-8e40e34ed7c6}</Project>
-      <Name>POCOLib</Name>
+      <Name>EcommerceEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Specification\Specification.csproj">
       <Project>{c4b3f2b3-a6dd-4764-8a11-10f407eb2611}</Project>

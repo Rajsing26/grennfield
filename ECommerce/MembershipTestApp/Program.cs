@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Services;
+using EcommerceServices;
 using Specification;
-using POCO;
+using EcommerceEntities;
 using System.Net;
 namespace MembershipTestApp
 {

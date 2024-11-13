@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using POCO;
+using EcommerceEntities;
 using Specification;
 using BinaryDataRepositoryLIb;
 using System.Security;
