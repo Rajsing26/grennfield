@@ -26,7 +26,7 @@ namespace AuthWebAPI.Controllers
         public User Get(int id)
         {
             IAuthService svc = new AuthService();
-            User Users = svc.GetAllUser();
+            User Users = svc.GetById(id);
 
             return Users;
         }
@@ -35,15 +35,15 @@ namespace AuthWebAPI.Controllers
         public void Post([FromBody] User p)
         {
             IAuthService svc = new AuthService();
-            svc.Register(p);
+            svc.Register(p,"password");                     //continue with the code here
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody] User p)
+       /* public void Put(int id, [FromBody] User p)
         {
             IAuthService svc = new AuthService();
             svc.Update(p);
-        }
+        }*/
 
         // DELETE api/values/5
         public void Delete(int id)

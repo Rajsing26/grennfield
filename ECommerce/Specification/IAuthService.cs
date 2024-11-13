@@ -19,5 +19,8 @@ namespace Specification
 
         List<User> GetAllUser();
         List<Credenail> GetAllCredentials();
+
+        User GetById(int id);
+        bool Delete(int id);
     }
 }

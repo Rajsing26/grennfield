@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 //using BinaryDataRepositoryLib;
 using BinaryDataRepositoryLIb;
+using JsonDataRepositoryLib;
 using POCO;
 using Specification;
 
@@ -15,9 +16,9 @@ namespace Services
 
     public class AuthService : IAuthService
     {
-        public static string logfile = "logfile.dat";
+        public static string logfile = @"E:/log.json";
 
-        public static string credfile = "credentials.dat";
+        public static string credfile = @"E:/credentials.json";
 
         public bool Seeding()
         {
@@ -31,8 +32,8 @@ namespace Services
             credentials.Add(new Credenail { Email = "ram@gmail.com", Password = "1234" });
             credentials.Add(new Credenail { Email = "sham@gmail.com", Password = "0000" });
             
-            IDataRepository<User> repository = new BinaryRepository<User>();
-            IDataRepository<Credenail> dataRepository = new BinaryRepository<Credenail>();
+            IDataRepository<User> repository = new JsonRepository<User>();
+            IDataRepository<Credenail> dataRepository = new JsonRepository<Credenail>();
             status = repository.Serialize(logfile, Users);
             status = false;
             status = dataRepository.Serialize(credfile, credentials);
@@ -50,12 +51,12 @@ namespace Services
             Credenail credential = new Credenail { Email = u.Email, Password = pass };
             credentials.Add(credential);
 
-            IDataRepository<User> repository = new BinaryRepository<User>();
+            IDataRepository<User> repository = new JsonRepository<User>();
             status = repository.Serialize(logfile, users);
 
             status = false;
 
-            IDataRepository<Credenail> dataRepository = new BinaryRepository<Credenail>();
+            IDataRepository<Credenail> dataRepository = new JsonRepository<Credenail>();
             status = dataRepository.Serialize(credfile, credentials);
             return status;
         }
@@ -77,14 +78,14 @@ namespace Services
         public List<User> GetAllUser()
         {
             List<User> users = new List<User>();
-            IDataRepository<User> repository = new BinaryRepository<User>();
+            IDataRepository<User> repository = new JsonRepository<User>();
             users = repository.Deserialize(logfile);
             return users;
         }
         public List<Credenail> GetAllCredentials()
         {
             List<Credenail> credentials = new List<Credenail>();
-            IDataRepository<Credenail> repository = new BinaryRepository<Credenail>();
+            IDataRepository<Credenail> repository = new JsonRepository<Credenail>();
             credentials = repository.Deserialize(credfile);
             return credentials;
         }
@@ -92,7 +93,7 @@ namespace Services
 
         public bool Login(string username, string password)
         {
-            IDataRepository<Credenail> repository = new BinaryRepository<Credenail>();
+            IDataRepository<Credenail> repository = new JsonRepository<Credenail>();
             List<Credenail> credentials = repository.Deserialize(credfile);
             foreach (Credenail cred in credentials)
             {
@@ -113,9 +114,48 @@ namespace Services
                 if (cred.Email == username & cred.Password == oldpassword)
                 {
                     cred.Password = newpassword;
-                    IDataRepository<Credenail> dataRepository = new BinaryRepository<Credenail>();
+                    IDataRepository<Credenail> dataRepository = new JsonRepository<Credenail>();
                     return dataRepository.Serialize(credfile, credentials);
                 }
+            }
+            return false;
+        }
+
+
+        public User GetById(int id)
+        {
+            //foreach (Product product in products)
+            //{
+            //    if (product.Id == id)
+            //    {
+            //        return product;
+            //    }
+
+            //}
+            //return null;
+            //return new Product { Id = 1, Title = "Gerbera", Description = "Wedding Flower", UnitPrice = 12, Quantity = 5000, ImageUrl = "/Images/Gerbera.jfif" };
+            User user = null;
+            List<User> users = GetAllUser();
+            foreach (User u in users)
+            {
+                if (u.Id == id)
+                {
+                    user = u;
+                }
+            }
+            return user;
+        }
+
+        public bool Delete(int id)
+        {
+            User user = GetById(id);
+            if (user != null)
+            {
+                List<User> users = GetAllUser();
+                users.RemoveAll(u => u.Id == id);
+                IDataRepository<User> repository = new JsonRepository<User>();
+                repository.Serialize(@"D:\Users.json", users);
+                return true;
             }
             return false;
         }

@@ -31,7 +31,7 @@ namespace Services
             /* IDataRepository<Product> repo = new BinaryRepository<Product>();
              status = repo.Serialize(@"E:/products.dat", products);*/
             IDataRepository<Product> repo = new JsonRepository<Product>();
-            status =repo.Serialize("products.json",products);
+            status =repo.Serialize(@"E:/products.json", products);
             return status;
         }
         public bool Delete(int id)
@@ -42,7 +42,7 @@ namespace Services
                 List<Product> allProducts = GetAll();
                 allProducts.Remove(theProduct);
                 IDataRepository<Product> repo = new JsonRepository<Product>();
-                repo.Serialize("products.json", allProducts);
+                repo.Serialize(@"E:/products.json", allProducts);
             }
             return false;
         }
@@ -66,7 +66,7 @@ namespace Services
         {
             List<Product> products = new List<Product>();
             IDataRepository<Product> repository = new JsonRepository<Product>();
-            products = repository.Deserialize("products.json");
+            products = repository.Deserialize(@"E:/products.json");
             return products;
         }
 
@@ -75,7 +75,7 @@ namespace Services
             List<Product> allProducts = GetAll();
             allProducts.Add(product);
             IDataRepository<Product> repo = new JsonRepository<Product>();
-            repo.Serialize("products.json", allProducts);
+            repo.Serialize(@"E:/products.json", allProducts);
 
             return false;
         }
@@ -89,7 +89,7 @@ namespace Services
                 allProducts.Remove(theProduct);
                 allProducts.Add(productTobeUpdated);
                 IDataRepository<Product> repo = new JsonRepository<Product>();
-                repo.Serialize("products.json", allProducts);
+                repo.Serialize(@"E:/products.json", allProducts);
             }
             return false;
         }
