@@ -30,6 +30,7 @@ namespace BankingPortal.Repositories
             FileStream createStream = File.Create(filename);
             JsonSerializer.Serialize(createStream, items);
             createStream.Close();
+            status = true;
             return status;
 
         }

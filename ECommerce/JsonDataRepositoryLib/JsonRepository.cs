@@ -30,6 +30,7 @@ namespace JsonDataRepositoryLib
             bool status = false;
             FileStream createStream = File.Create(filename);
             JsonSerializer.Serialize(createStream, items);
+            status = true;  
             createStream.Close();
             return status;
 

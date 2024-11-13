@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml.Linq;
 
 namespace BankingPortal.Controllers
 {
@@ -39,10 +40,19 @@ namespace BankingPortal.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(string username, string oldpassword, string newpassword)
+        public ActionResult Register(string firstname, string lastname, string contactnumber,string email,string location)
         {
-            IAuthService svc = new AuthService();   
+            IAuthService svc = new AuthService();
+            User u = new User { FirstName = firstname, LastName = lastname, Email = email, ContactNo = contactnumber, Location =location };
+            if (svc.Register(u, "password"))
+            {
+                return RedirectToAction("Welcome");
+            }
+            else
+            {
 
+                return View();
+            }
             return View();
         }
 
