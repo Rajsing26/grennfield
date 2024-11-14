@@ -69,6 +69,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{A0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingPortal", "BankingPortal\BankingPortal.csproj", "{13844C40-7BF4-46E6-A133-B2DAEE10C7A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HDFCBankApp", "HDFCBankApp\HDFCBankApp.csproj", "{E192D374-B606-4314-AAD9-30F4FE4A00A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -167,6 +169,10 @@ Global
 		{13844C40-7BF4-46E6-A133-B2DAEE10C7A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13844C40-7BF4-46E6-A133-B2DAEE10C7A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13844C40-7BF4-46E6-A133-B2DAEE10C7A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E192D374-B606-4314-AAD9-30F4FE4A00A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E192D374-B606-4314-AAD9-30F4FE4A00A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E192D374-B606-4314-AAD9-30F4FE4A00A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E192D374-B606-4314-AAD9-30F4FE4A00A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -195,6 +201,7 @@ Global
 		{06B8935F-CFA1-4774-84AA-2C45697DD472} = {8932764E-D14F-403C-8AA6-4C5E99C495ED}
 		{993FC9D4-404C-4AE2-B4C7-E9069067429D} = {2C49ADE0-395D-4A7F-B36B-5234EE6F8F6A}
 		{13844C40-7BF4-46E6-A133-B2DAEE10C7A0} = {8932764E-D14F-403C-8AA6-4C5E99C495ED}
+		{E192D374-B606-4314-AAD9-30F4FE4A00A3} = {8932764E-D14F-403C-8AA6-4C5E99C495ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09F9E268-0BA4-4291-90C6-1D38188729E4}
