@@ -5,10 +5,10 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
-using BankingPortal.Models;
-using BankingPortal.Repositories;
+using HDFCBankApp.Models;
+using HDFCBankApp.Repositories;
 
-namespace BankingPortal.Models
+namespace HDFCBankApp.Models
 {
 
     public class AuthService : IAuthService
