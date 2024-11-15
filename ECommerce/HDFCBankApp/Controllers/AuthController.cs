@@ -44,7 +44,7 @@ namespace HDFCBankApp.Controllers
         public ActionResult Register(string firstname, string lastname, string contactnumber,string email,string location)
         {
 
-            //this.HttpContext.Session["loggedinUser"] = email;
+            this.HttpContext.Session["loggedinUser"] = email;
             IAuthService svc = new AuthService();
             User u = new User { FirstName = firstname, LastName = lastname, Email = email, ContactNo = contactnumber, Location =location };
             if (svc.Register(u, "password"))
